@@ -325,14 +325,14 @@ class User implements UserInterface
     }
 
     /**
-     * @return Collection|card[]
+     * @return Collection|Card[]
      */
     public function getCard(): Collection
     {
         return $this->card;
     }
 
-    public function addCard(card $card): self
+    public function addCard(Card $card): self
     {
         if (!$this->card->contains($card)) {
             $this->card[] = $card;
@@ -341,7 +341,7 @@ class User implements UserInterface
         return $this;
     }
 
-    public function removeCard(card $card): self
+    public function removeCard(Card $card): self
     {
         $this->card->removeElement($card);
 

@@ -31,7 +31,7 @@ class Tab
     private $name;
 
     /**
-     * @ORM\ManyToOne(targetEntity=project::class, inversedBy="tabs")
+     * @ORM\ManyToOne(targetEntity=Project::class, inversedBy="tabs")
      * @ORM\JoinColumn(nullable=false)
      */
     private $project;
@@ -63,12 +63,12 @@ class Tab
         return $this;
     }
 
-    public function getProject(): ?project
+    public function getProject(): ?Project
     {
         return $this->project;
     }
 
-    public function setProject(?project $project): self
+    public function setProject(?Project $project): self
     {
         $this->project = $project;
 
