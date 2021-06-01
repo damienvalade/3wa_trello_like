@@ -1,0 +1,24 @@
+includes:
+    # - vendor/phpstan/phpstan/conf/bleedingEdge.neon
+    # Add https://github.com/phpstan/phpstan-strict-rules
+    # Add https://github.com/Slamdunk/phpstan-extensions
+
+parameters:
+
+    checkGenericClassInNonGenericObjectType: false
+    checkMissingIterableValueType: false
+
+    level: 5
+
+    paths:
+        - bin
+        - config
+        - public
+        - src
+        - tests
+
+    excludePaths:
+        - config/bootstrap.php
+        - tests/bootstrap.php
+        - src/Security/LoginFormAuthenticator.php
+        - src/Security/EmailVerifier.php
