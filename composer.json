@@ -23,10 +23,26 @@
         "symfony/security-bundle": "5.2.*",
         "symfony/twig-bundle": "5.2.*",
         "symfony/validator": "5.2.*",
+        "symfony/webpack-encore-bundle": "^1.11",
         "symfony/yaml": "5.2.*",
         "symfonycasts/verify-email-bundle": "^1.5",
         "twig/extra-bundle": "^2.12|^3.0",
         "twig/twig": "^2.12|^3.0"
+    },
+    "require-dev": {
+        "doctrine/doctrine-fixtures-bundle": "^3.3",
+        "phpstan/extension-installer": "^1.0",
+        "phpstan/phpstan": "^0.12.83",
+        "phpstan/phpstan-deprecation-rules": "^0.12.5",
+        "phpstan/phpstan-doctrine": "^0.12.25",
+        "phpstan/phpstan-phpunit": "^0.12.16",
+        "phpstan/phpstan-strict-rules": "^0.12.5",
+        "phpstan/phpstan-symfony": "^0.12.11",
+        "phpunit/phpunit": "^7.5",
+        "symfony/browser-kit": "4.4.*",
+        "symfony/phpunit-bridge": "^5.2",
+        "symfony/stopwatch": "^5.2",
+        "symfony/web-profiler-bundle": "^5.2"
     },
     "config": {
         "optimize-autoloader": true,
@@ -60,7 +76,10 @@
         ],
         "post-update-cmd": [
             "@auto-scripts"
-        ]
+        ],
+        "test": "php -d memory_limit=-1 vendor/phpunit/phpunit/phpunit --stop-on-failure",
+        "phpstan": "php vendor/phpstan/phpstan/phpstan analyse --memory-limit 1G -c phpstan.neon"
+
     },
     "conflict": {
         "symfony/symfony": "*"
@@ -70,9 +89,5 @@
             "allow-contrib": false,
             "require": "5.2.*"
         }
-    },
-    "require-dev": {
-        "symfony/stopwatch": "^5.2",
-        "symfony/web-profiler-bundle": "^5.2"
     }
 }
