@@ -13,10 +13,10 @@
         <li>Email : {{ user.email }}</li>
     </ul>
 
-    {% if not user.projects.isEmpty %}
+    {% if not user.project.isEmpty %}
         <ul>
-            {% for project in user.projects %}
-                <li>{{ project.name }}</li>
+            {% for project in user.project %}
+                <li>Nom :{{ project.name }} Description {{ project.description }}</li>
             {% endfor %}
         </ul>
     {% endif %}

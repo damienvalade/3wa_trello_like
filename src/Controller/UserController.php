@@ -23,6 +23,6 @@ class UserController extends AbstractController
      */
     public function index()
     {
-        return $this->render('backend/user/profile.html.twig', ['user' => $this->getUser()]);
+        return $this->render('backend/user/profile.html.twig', ['user' => $this->getUser(), 'project' => $this->getUser()->getProjects()]);
     }
 }
