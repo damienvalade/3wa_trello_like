@@ -1,0 +1,14 @@
+{% extends 'backend/base.html.twig' %}
+
+{% block title %}Register{% endblock %}
+
+{% block body %}
+    <h1>Add project</h1>
+
+    {{ form_start(form) }}
+    {{ form_row(form.name) }}
+    {{ form_row(form.description) }}
+
+    <button type="submit" class="btn">Add</button>
+    {{ form_end(form) }}
+{% endblock %}
