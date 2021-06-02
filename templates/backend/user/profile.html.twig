@@ -1,0 +1,23 @@
+{% extends 'backend/base.html.twig' %}
+
+{% block title %}User profile{% endblock %}
+
+{% block body %}
+    <h1>Profile</h1>
+
+    <ul>
+        <li>{{ user.img }}</li>
+        <li>Name : {{ user.lastname }}</li>
+        <li>Firstname : {{ user.firstname }}</li>
+        <li>Pseudo : {{ user.pseudo }}</li>
+        <li>Email : {{ user.email }}</li>
+    </ul>
+
+    {% if not user.project.isEmpty %}
+        <ul>
+            {% for project in user.project %}
+                <li>Nom :{{ project.name }} Description {{ project.description }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endblock %}
