@@ -1,4 +1,4 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootswatch/dist/lux/bootstrap.min.css';
 
 import $ from 'jquery';
 global.$ = global.jQuery = $;
